@@ -5,8 +5,8 @@
     <classes>
       <class name="Android_Test.MoneyControl_Test">
         <methods>
+          <include name="loginTest"/>
           <include name="setUp"/>
-          <include name="testCal"/>
           <include name="teardown"/>
         </methods>
       </class> <!-- Android_Test.MoneyControl_Test -->

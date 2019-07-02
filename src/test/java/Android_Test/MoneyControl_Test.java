@@ -10,6 +10,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import io.appium.java_client.android.Activity;
 import io.appium.java_client.android.AndroidDriver;
 
 public class MoneyControl_Test {
@@ -45,6 +46,8 @@ public class MoneyControl_Test {
 	   WebElement loginIcon=driver.findElement(By.id("com.divum.MoneyControl:id/header_user_icon_img"));
 	   loginIcon.click();
 	   Thread.sleep(2000);
+//	   driver.toggleWifi();
+//	   driver.toggleData();
 	   
 	   WebElement userName=driver.findElement(By.id("com.divum.MoneyControl:id/loginEmailET"));
 	   userName.sendKeys("testing");
@@ -61,6 +64,24 @@ public class MoneyControl_Test {
 	   WebElement logInButton=driver.findElement(By.id("com.divum.MoneyControl:id/loginBtn"));
 	   logInButton.click();
 	  
+	   
+	   
+	   
+	   	Activity activity = new Activity("com.android.settings", "com.android.settings.Settings");
+	     //activity.setWaitAppPackage("app wait package goes here");
+	     //activity.setWaitAppActivity("app wait activity goes here");
+	     driver.startActivity(activity);
+	     
+	     
+	   //launch settings App
+
+       //Switch OFF WIFI
+       driver.findElement(By.id("com.android.settings:id/switchWidget")).click();
+
+       //Re launch calculator App
+       //driver.startActivity(calculatorAppPackageName, calculatorAppActivityName);
+
+       //Validate results
 	}
 
 	@AfterClass
